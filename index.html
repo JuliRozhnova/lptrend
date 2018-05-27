@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Lptrend test</title>
+        <meta name="description"
+              content="Lptrend - test task">
+
+        <link rel="stylesheet"
+              href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+        <link rel = "stylesheet"
+              href = "https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="css/styles.css">
+        <!-- IE6-8 HTML5 elements support -->
+        <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body class="page page-flex">
+        <aside class="page__temporary-drawer mdc-drawer mdc-drawer--temporary">
+            <nav class="temporary-drawer__drawer mdc-drawer__drawer mdc-drawer__content">
+                <header class="temporary-drawer__header mdc-drawer__header">
+                    <div class="temporary-drawer__header-icon custom-toolbar__icon avatar"></div>
+                    <div class="temporary-drawer__content">
+                        <p class="temporary-drawer__header-name">Иванов Иван</p>
+                        <a href="mailto:ivanov@gmail.com" class="temporary-drawer__header-mail">ivanov@gmail.com</a>
+                    </div>
+                </header>
+                <nav id="icon-with-text-demo" class="temporary-drawer__content mdc-drawer__content mdc-list">
+                    <a class="temporary-drawer__item mdc-list-item mdc-list-item--activated" href="#">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>Шаблоны
+                    </a>
+                    <a class="temporary-drawer__item mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">view_module</i>Мои сайты
+                    </a>
+                    <a class="temporary-drawer__item mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">settings</i>Настройки
+                    </a>
+                    <a class="temporary-drawer__item mdc-list-item" href="#">
+                        <i class="material-icons mdc-list-item__graphic" aria-hidden="true">account_balance_wallet</i>Платежи
+                    </a>
+                </nav>
+            </nav>
+        </aside>
+        <header class="custom-toolbar mdc-toolbar mdc-toolbar--fixed">
+            <div class="custom-toolbar__row mdc-toolbar__row line custom-toolbar__row--blue"></div>
+            <div class="custom-toolbar__row mdc-toolbar__row">
+                <section class="custom-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-start">
+                    <button class="menu-button" id="menu-open">
+                        <div class="menu-button__icon" id="menu-icon">
+                            <i class="menu-ico material-icons mdc-button__icon" aria-hidden="true">menu</i>
+                        </div>
+                    </button>
+                    <h3 class="custom-toolbar__title" id="phone-title">Мои сайты</h3>
+                    <a class="custom-toolbar__title-link" href="javascript:void(0);">
+                        <div class="custom-toolbar__logo"></div>
+                    </a>
+                </section>
+                <section class="custom-toolbar__section mdc-toolbar__section mdc-toolbar__section--align-end custom-toolbar__section--fit-content">
+                    <a class="custom-toolbar__avatar-link" href="javascript:void(0);">
+                        <div class="custom-toolbar__icon avatar"></div>
+                    </a>
+                </section>
+            </div>
+            <div class="custom-toolbar__row mdc-toolbar__row nav custom-toolbar__row--light">
+                <nav id="navigation-tabs" class="custom-tab-bar">
+                    <a class="custom-tab" href="#patterns">Шaблоны
+                        <span class="custom-tab__indicator"></span>
+                    </a>
+                    <a class="custom-tab custom-tab--active" href="#websites">Мои сайты
+                        <span class="custom-tab__indicator"></span>
+                    </a>
+                    <a class="custom-tab" href="#settings">Настройки
+                        <span class="custom-tab__indicator"></span>
+                    </a>
+                    <a class="custom-tab" href="#payments">Платежи
+                        <span class="custom-tab__indicator"></span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+        <main class="page__content page-flex-element">
+            <section class="section" id="patterns"></section>
+            <section class="section products" id="websites">
+                <div class="page__content-wrapper">
+                    <div class="section__header">
+                        <h2 class="section__title">Мои сайты</h2>
+                    </div>
+                    <ul class="products__list">
+                        <li class="products__card mdc-card mdc-card--outlined products__card--add">
+                            <i class="products__icon icon products__icon--plus"></i>
+                            <p class="products__card-title">Новый сайт</p>
+                        </li>
+                        <li class="products__card mdc-card">
+                            <div class="products__media mdc-card__media products__media--image"></div>
+                            <div class="products__info">
+                                <p class="products__info-date">25.02.2018</p>
+                                <h4 class="products__info-title">Название сайта</h4>
+                            </div>
+                            <div class="products__actions mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="products__button mdc-button mdc-card__action mdc-card__action--button">Опубликовать</button>
+                                </div>
+                                <div class="mdc-card__action-icons">
+                                    <i class="products__icon material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Delete">delete</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="products__card mdc-card">
+                            <div class="products__media mdc-card__media products__media--image"></div>
+                            <div class="products__info">
+                                <p class="products__info-date">25.02.2018</p>
+                                <h4 class="products__info-title">Название сайта</h4>
+                            </div>
+                            <div class="products__actions mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="products__button mdc-button mdc-card__action mdc-card__action--button">Опубликовать</button>
+                                </div>
+                                <div class="mdc-card__action-icons">
+                                    <i class="products__icon material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Delete">delete</i>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="products__card mdc-card">
+                            <div class="products__media mdc-card__media products__media--image"></div>
+                            <div class="products__info">
+                                <p class="products__info-date">25.02.2018</p>
+                                <h4 class="products__info-title">Название сайта</h4>
+                            </div>
+                            <div class="products__actions mdc-card__actions">
+                                <div class="mdc-card__action-buttons">
+                                    <button class="products__button mdc-button mdc-card__action mdc-card__action--button">Опубликовать</button>
+                                </div>
+                                <div class="mdc-card__action-icons">
+                                    <i class="products__icon material-icons mdc-card__action mdc-card__action--icon" tabindex="0" role="button" title="Delete">delete</i>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="section" id="settings"></section>
+            <section class="section" id="payments"></section>
+            <button class="add-website mdc-fab material-icons" aria-label="Add">
+                <span class="add-website__icon mdc-fab__icon">add</span>
+            </button>
+        </main>
+        <footer class="footer">
+            <div class="footer__content">
+                <ul class="custom-list custom-list--non-interactive mdc-list">
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Тарифы</a>
+                    </li>
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Блог</a>
+                    </li>
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Партнерская программа</a>
+                    </li>
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Политика конфиденциальности </a>
+                    </li>
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Поддержка</a>
+                    </li>
+                    <li class="custom-list__item">
+                        <a href="javascript:void(0)" class="custom-list__item-link mdc-list-item">Пользовательское соглашение</a>
+                    </li>
+                </ul>
+                <ul class="social">
+                    <li class="social__item">
+                        <a href="javascript:void(0);" class="social__item-link">
+                            <i class="fab fa-vk icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="javascript:void(0);" class="social__item-link">
+                            <i class="fab fa-facebook icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="javascript:void(0);" class="social__item-link">
+                            <i class="fab fa-odnoklassniki icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="javascript:void(0);" class="social__item-link">
+                            <i class="fab fa-twitter icon"></i>
+                        </a>
+                    </li>
+                    <li class="social__item">
+                        <a href="javascript:void(0);" class="social__item-link">
+                            <i class="fab fa-google-plus-g icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    </body>
+</html>

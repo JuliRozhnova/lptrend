@@ -1,0 +1,90 @@
+// colors
+$color-white: #fff
+$color-black: #000
+$color-blue: #3f51b5
+$color-dark-blue: #002984
+
+// text-colors
+$t-color-white: #fff
+$t-color-gray: #f5f5f5
+$t-color-gray-1: rgba(0, 0, 0, 0.12)
+$t-color-gray-2: rgba(0, 0, 0, 0.16)
+$t-color-gray-5: rgba(0, 0, 0, 0.54)
+$t-color-gray-9: rgba(0, 0, 0, 0.87)
+$t-color-blue: #3f51b5
+
+// redeclare root variable
+\:root
+  --mdc-theme-primary: #3f51b5
+
+// MIXINS
+// media queries mixin
+$screen-lg: 1920px
+$screen-md: 1200px
+$screen-sm: 992px
+$screen-xs: 767px
+
+@mixin respond-to($media)
+  @if $media == phone
+    @media only screen and (max-width: $screen-xs)
+      @content
+  @else if $media == handheld
+    @media only screen and (min-width: $screen-xs+1)
+      @content
+  @else if $media == medium-screen
+    @media only screen and (min-width: $screen-sm)
+      @content
+  @else if $media == all-screen
+    @media only screen and (min-width: $screen-md)
+      @content
+  @else if $media == large-screen
+    @media only screen and (min-width: $screen-lg)
+      @content
+
+// grid
+//$cont-width-xs-1: 750px
+$cont-width-xs-1: 544px
+//$cont-width-sm: 970px
+$cont-width-sm: 808px
+//$cont-width-md: 1170px
+$cont-width-md: 1072px
+$cont-padding: 8px
+
+//mixin for wrapper
+@mixin wrapper()
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 0 $cont-padding
+
+  @include respond-to(handheld)
+    max-width: $cont-width-xs-1
+  @include respond-to(medium-screen)
+    max-width: $cont-width-sm
+  @include respond-to(all-screen)
+    max-width: $cont-width-sm
+  @media (min-width: $screen-md + 81)
+    max-width: $cont-width-md
+
+// mixin for block link
+@mixin block-link($display, $align, $color)
+  display: $display
+  -ms-flex-align: $align
+  align-items: $align
+  color: $color
+  @content
+
+  &:active, &:focus, &:hover
+    text-decoration: none
+
+// mixin for pseudo element
+@mixin p-el($el, $el-width, $el-height)
+  &:#{$el}
+    content: ''
+    display: inline-block
+    vertical-align: middle
+    width: $el-width
+    height: $el-height
+    @content

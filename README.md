@@ -1,2 +1,2 @@
 # lptrend
-Test task
+Lptrend test task

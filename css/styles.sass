@@ -1,0 +1,602 @@
+@import 'variable'
+
+
+html, body
+  height: 100%
+  margin: 0
+  padding: 0
+
+body
+  font-family: Roboto,sans-serif
+  font-size: 12px
+  line-height: 1.75rem
+  line-height: 14px
+  font-weight: 400
+  letter-spacing: .00em
+
+*, *:before, *:after
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+
+a, a:-webkit-any-link
+  cursor: pointer
+  text-decoration: none
+
+[role='button']
+  text-decoration: none
+  cursor: pointer
+
+// icons
+.icon
+  position: relative
+  display: inline-block
+  width: 24px
+  height: 24px
+  font-size: inherit
+  color: currentColor
+
+// page styles
+.page
+  min-height: calc(100vh + 185px)
+
+  @include respond-to(handheld)
+    min-height: initial
+  @include respond-to(phone)
+    background-color: $t-color-gray
+
+  &-flex
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-direction: column
+    flex-direction: column
+
+    &-element
+      -ms-flex: 1
+      flex: 1
+
+  &__content
+    position: relative
+    width: 100%
+    margin-top: 138px
+
+    &-wrapper
+      @include wrapper()
+
+      &:before, &:after
+        content: ''
+        display: table
+
+      @include  respond-to(phone)
+        padding: 0
+
+    section
+      display: none
+
+    #websites
+      display: block
+
+    @include respond-to(handheld)
+      margin-top: 96px
+    @media (min-width: 960px)
+      margin-top: 112px
+    @include respond-to(phone)
+      margin-top: 0
+
+  &__temporary-drawer
+    z-index: 11
+
+    @include respond-to(handheld)
+      display: none
+
+// aside section
+.temporary-drawer
+  &__header
+    background-color: $color-blue
+    padding: 44px 16px 8px
+
+    &-name
+      display: block
+      color: $t-color-white
+      margin-bottom: 3px
+
+    &-mail
+      color: $color-white
+      line-height: 1.25rem
+
+  &__content
+    font-family: Roboto,sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 0.875rem
+    line-height: 1rem
+    font-weight: 500
+    color: inherit
+    letter-spacing: 0.01em
+    text-decoration: none
+    text-transform: none
+    padding: 0
+    margin-top: 19px
+
+
+  &__item
+    margin-top: 6px
+
+    &.mdc-list-item
+      font-weight: 400
+
+      &--activated
+        &:before, &:after
+          background-color: $color-white
+
+
+    @at-root
+      .mdc-drawer--temporary
+        .temporary-drawer
+          &__header
+            &:before
+              padding-top: 0
+
+            &-icon
+              width: 64px
+              height: 64px
+
+
+
+// Section
+.section
+  position: relative
+  padding-top: 40px
+  padding-bottom: 68px
+
+  &__header
+    margin-top: 19px
+    margin-bottom: 37px
+
+  &__title
+    font-family: Roboto,sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: 2.125rem
+    line-height: 2.45rem
+    font-weight: 400
+    letter-spacing: 0.00129em
+    color: $t-color-gray-5
+    text-align: left
+    text-decoration: none
+    padding: 0 12px
+
+  @include respond-to(phone)
+    padding: 0
+
+// social block
+.social
+  list-style-type: none
+  text-align: center
+  margin: 0 auto
+  padding: 0
+
+  &__item
+    padding-left: 15px
+    padding-right: 15px
+
+    &-link
+      font-size: 1.5rem
+      color: $color-blue
+
+
+// Menu button
+
+.menu-button
+  display: none
+  -ms-flex-align: center
+  align-items: center
+  -ms-flex-pack: center
+  justify-content: center
+  width: 24px
+  height: 24px
+  background-color: transparent
+  border: 0
+  cursor: pointer
+
+  @include respond-to(phone)
+    display: flex
+
+  &__icon
+    display: block
+    width: 24px
+    height: 24px
+    transform: scale(1)
+    transition: transform .2s cubic-bezier(.4,0,.2,1),opacity .2s cubic-bezier(.4,0,.2,1)
+
+    .menu-ico
+      color: $color-white
+
+// Add new site icon
+.add-website
+  position: absolute
+  right: 16px
+  bottom: 16px
+
+  background-color: $color-blue
+
+  @include respond-to(handheld)
+    display: none
+
+// Custom styles
+.custom
+  &-toolbar
+    &__row
+      height: 100%
+      padding: 0 24px
+
+      &--light
+        @extend #navigation-tabs
+        background-color: $color-white
+
+      &--blue
+        background-color: $color-dark-blue
+
+      &.line
+        height: calc(48px / 2)
+        min-height: calc(48px / 2)
+
+        @include respond-to(handheld)
+          display: none
+
+      &.nav
+        @include respond-to(phone)
+          display: none
+
+      @include respond-to(phone)
+        height: 56px
+
+    &__section
+      -ms-flex: 1
+      flex: 1
+      padding: 0
+      -ms-flex-align: center
+      align-items: center
+
+      &--fit-content
+        -ms-flex: initial
+        flex: initial
+
+    &__title
+      font-family: Roboto,sans-serif
+      -moz-osx-font-smoothing: grayscale
+      -webkit-font-smoothing: antialiased
+      font-size: 1.25rem
+      line-height: 1.44rem
+      font-weight: 500
+      letter-spacing: 0.005em
+      text-decoration: none
+      margin: 0
+      padding: 0
+      white-space: nowrap
+
+      &-link
+        @include block-link(flex, center, $color-white)
+
+      @at-root
+        #phone-title
+          @include respond-to(handheld)
+            display: none
+
+      @include respond-to(phone)
+        margin-left: 31px
+
+    &__logo
+      width: 157px
+      height: 36px
+      background-image: url("../images/logo.svg")
+      background-size: contain
+      background-position: 50%
+      background-repeat: no-repeat
+
+      @include respond-to(phone)
+        display: none
+
+    &__avatar
+      margin: 0
+      padding: 0
+
+      @include block-link(flex, center, $color-white)
+
+    &__icon
+      width: 32px
+      height: 32px
+      background-size: contain
+      background-position: 50%
+      background-repeat: no-repeat
+
+      &.avatar
+        background-image: url("../images/avatar.svg")
+
+      @include respond-to(phone)
+        width: 20px
+        height: 20px
+
+    @include respond-to(phone)
+      position: relative
+
+  &-tab
+    font-family: Roboto,sans-serif
+    -moz-osx-font-smoothing: grayscale
+    -webkit-font-smoothing: antialiased
+    font-size: .875rem
+    line-height: 2.25rem
+    font-weight: 500
+    text-transform: uppercase
+    color: $t-color-gray-5
+    text-align: center
+    text-decoration: none
+    --mdc-ripple-fg-size: 0
+    --mdc-ripple-left: 0
+    --mdc-ripple-top: 0
+    --mdc-ripple-fg-scale: 1
+    --mdc-ripple-fg-translate-end: 0
+    --mdc-ripple-fg-translate-start: 0
+    -webkit-tap-highlight-color: rgba(0,0,0,0)
+    will-change: transform,opacity
+    display: -ms-inline-flexbox
+    display: inline-flex
+    -ms-flex-align: center
+    align-items: center
+    position: relative
+    box-sizing: border-box
+    width: auto
+    height: 100%
+    min-width: 128px
+    min-height: 48px
+    padding: 0 24px
+    white-space: nowrap
+    cursor: pointer
+    overflow: hidden
+
+    &--active
+      color: $t-color-blue
+
+      .custom-tab__indicator
+        display: block
+
+    &:active, &:focus, &:hover
+      text-decoration: none
+
+    &__indicator
+      position: absolute
+      bottom: 0
+      left: 0
+      display: none
+      width: 100%
+      height: 2px
+      background-color: #3f51b5
+
+    &-bar
+      display: -ms-flexbox
+      display: flex
+      position: relative
+      height: 100%
+      margin: 0 auto
+      text-transform: uppercase
+
+    @at-root
+      #navigation-tabs
+        min-height: 48px
+
+  &-list
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+    font-size: 0.8125rem
+    font-weight: 500
+    line-height: 0.938rem
+    text-transform: uppercase
+
+    &--non-interactive //bug fix for bg on hover
+      .mdc-list-item
+        &:before, &:after
+          background-color: transparent
+
+    &__item
+      margin-bottom: 27px
+
+      &-link
+        height: initial
+
+        &:hover
+          &:before, &:after
+            background-color: transparent
+
+.products
+
+  &__list
+    position: relative
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-flex-wrap: wrap
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    -webkit-box-align: start
+    -ms-flex-align: start
+    align-items: flex-start
+    -webkit-box-pack: justify
+    -ms-flex-pack: justify
+    justify-content: space-between
+    list-style-type: none
+    padding: 0
+
+    @include respond-to(phone)
+      height: initial
+
+  &__card
+    display: -webkit-box
+    display: -ms-flexbox
+    display: flex
+    -webkit-box-align: center
+    -ms-flex-align: center
+    align-items: center
+    -webkit-box-pack: center
+    -ms-flex-pack: center
+    justify-content: center
+    width: 100%
+    max-width: 240px
+    min-height: 336px
+    background: $color-white
+    margin: 0 12px 24px
+
+    &--add
+      border: none
+      background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill: none; stroke: #3f51b5; stroke-width: 4; stroke-dasharray: 11 11'/></svg>")
+
+      @include respond-to(phone)
+        display: none
+
+    @include respond-to(all-screen)
+      margin-bottom: 44px
+
+    &-title
+      font-size: 1.25rem
+      line-height: 1.45rem
+      font-weight: 500
+      letter-spacing: 0.005em
+      color: $t-color-blue
+
+    div
+      width: 100%
+
+    @include respond-to(phone)
+      flex-wrap: wrap
+      flex-direction: row
+      max-width: 100%
+      min-height: initial
+      align-items: flex-start
+      box-shadow: none
+      border-bottom: 1px solid $t-color-gray-1
+      margin: 0
+
+      &:hover, &:focus, &:active
+        background-color: $t-color-gray-2
+
+  &__media
+    width: 100%
+    height: 168px
+
+    &--image
+      background-image: url('../images/product-image-1.jpg')
+
+      @include respond-to(phone)
+        background-size: 80%
+
+
+    @include respond-to(phone)
+      flex: 0 0 240px
+      -webkit-box-ordinal-group: 2
+      -webkit-order: 2
+      -ms-flex-order: 2
+      order: 2
+    @media (max-width: 390px)
+      flex-basis: 43%
+      height: 104px
+
+  &__info
+    min-height: 116px
+    padding: 21px 16px
+
+    &-date
+      color: $t-color-gray-5
+      letter-spacing: 0.02em
+      white-space: nowrap
+      margin-bottom: 4px
+
+      @include respond-to(phone)
+        margin-bottom: 5px
+
+    &-title
+      @extend .products__card-title
+      color: $t-color-gray-9
+
+    @include respond-to(phone)
+      flex: 1
+      -webkit-box-ordinal-group: 1
+      -webkit-order: 1
+      -ms-flex-order: 1
+      order: 1
+      min-height: initial
+      padding: 14px 16px
+
+  &__button
+    &:not(:disabled)
+      color: $color-blue
+      color: var(--mdc-theme-primary,$color-blue)
+
+    &:after, &:before
+      background: $color-white
+
+    &:hover
+      border-color: $color-white
+
+  &__icon
+    color: $color-blue
+
+    &:not(:disabled)
+      color: $color-blue
+
+    &--plus
+      position: relative
+      width: 24px
+      height: 24px
+      background-image: url("data:image/svg+xml;utf8,<svg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M24 13.577H13.714V23.76h-3.428V13.577H0v-3.394h10.286V0h3.428v10.183H24v3.394z' fill='#3F51B5'/></svg>")
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      padding: 50px
+      margin-bottom: 11px
+
+      &:after
+        position: relative
+        left: calc(-100px / 2)
+        top: calc(-100px / 2)
+        content: ''
+        display: block
+        width: 100px
+        height: 100px
+        border: none
+        border-radius: 50%
+        background-image: url("data:image/svg+xml;utf8,<svg width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><circle cx='50' cy='50' r='50' style='fill: none; stroke: #3f51b5; stroke-width: 4; stroke-dasharray: 11 11'/></svg>")
+
+  &__actions
+    @include respond-to(phone)
+      display: none
+
+  .section__header
+    @include respond-to(phone)
+      display: none
+
+.footer
+  position: relative
+  background-color: $t-color-gray
+  padding: 63px
+
+  &__content
+    @include wrapper()
+
+    &:before, &:after
+      content: ''
+      display: table
+
+  ul > li
+    display: inline-block
+
+  .custom-list
+    min-height: 60px
+    margin-bottom: 15px
+
+    @include respond-to(all-screen)
+      margin-bottom: 50px
+
+  @include respond-to(phone)
+    display: none
